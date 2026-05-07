@@ -117,7 +117,7 @@
                     Samuel <br><span class="gradient-text">Grajeda</span>
                 </h1>
                 <p class="text-xl text-slate-400 leading-relaxed mb-8 max-w-lg">
-                    Editor and Cinematographer specializing in technical post-production workflows. Merging cinematic art with digital precision (and a bit of chaos).
+                    Student creator focused on video editing, digital media, 3D design, and creative technical projects.
                 </p>
                 <div class="flex space-x-4">
                     <a href="#portfolio" class="bg-indigo-600 hover:bg-indigo-500 px-8 py-4 rounded-xl font-bold transition text-white">View Portfolio</a>
@@ -320,7 +320,8 @@
             
             if (scrollPos > threshold) {
                 const diff = scrollPos - threshold;
-                const translateY = diff * 1.5; 
+                // Increased fall speed from 1.5 to 2.5
+                const translateY = diff * 2.5; 
                 
                 // Add a "wobble" effect based on sine wave of scroll position
                 const wobble = Math.sin(scrollPos * 0.01) * 15;
