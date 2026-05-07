@@ -95,12 +95,9 @@
             </div>
             <div class="flex justify-center md:justify-end">
                 <div class="relative group">
-                    <!-- Outer glowing ring -->
                     <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-                    
-                    <!-- Profile Circle -->
                     <div class="relative w-64 h-64 md:w-80 md:h-80 bg-slate-900 rounded-full overflow-hidden border-4 border-slate-800 flex items-center justify-center text-slate-600 shadow-2xl">
-                        <!-- Icon Placeholder: Replace with <img src="your-headshot.jpg" class="w-full h-full object-cover"> later -->
+                        <!-- Icon Placeholder -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
@@ -110,13 +107,13 @@
         </div>
     </section>
 
-    <!-- Showcase Section (NEW: Focus on Editing & GIFs) -->
+    <!-- Showcase Section -->
     <section class="py-24 px-6 bg-indigo-600/5">
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="gif-container shadow-2xl">
-                    <!-- Replace 'editing-sample.gif' with your actual file -->
-                    <img src="editing-sample.gif" alt="Editing Showcase" class="w-full h-full object-cover min-h-[300px] bg-slate-800" onerror="this.src='https://via.placeholder.com/600x400/16161a/ffffff?text=Place+Your+Editing+GIF+Here'">
+                    <!-- This will try to load your gif. If it's not there, it shows a clean placeholder box -->
+                    <img src="editing-sample.gif" alt="Editing Showcase" class="w-full h-full object-cover min-h-[300px] bg-slate-800" onerror="this.src='1.gif'">
                     <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-white">
                         CLIP SHOWCASE: EDITING WORK
                     </div>
@@ -142,7 +139,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section (Requirement #1: 5 Work Samples) -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="py-32 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="mb-16">
@@ -151,7 +148,7 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Sample 1: The Film (GIF or Video) -->
+                <!-- Sample 1 -->
                 <div class="group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition">
                     <img src="film-sample.gif" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition" alt="Film Project" onerror="this.style.display='none'">
                     <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
@@ -237,7 +234,6 @@
             <h2 class="text-4xl font-bold mb-12 text-center">Photo Essay: Workforce Preparation</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-                <!-- Requirement: 3 Images of you/work -->
                 <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center">
                     <img src="backstage1.jpg" alt="Backstage" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
                     <span>[ Backstage 1 ]</span>
