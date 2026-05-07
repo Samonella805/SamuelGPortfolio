@@ -97,33 +97,44 @@
                 <div class="relative group">
                     <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
                     <div class="relative w-64 h-64 md:w-80 md:h-80 bg-slate-900 rounded-full overflow-hidden border-4 border-slate-800 flex items-center justify-center text-slate-600 shadow-2xl">
-                        <!-- Icon Placeholder for Profile Picture -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
+                        <!-- Profile Image -->
+                        <img src="profile.jpg" alt="Samuel Grajeda" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' class=\'h-32 w-32 opacity-20\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z\' /></svg>'">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Showcase Section -->
+    <!-- Showcase Section: Post-Production Mastery -->
     <section class="py-24 px-6 bg-indigo-600/5">
         <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="gif-container shadow-2xl">
-                    <!-- Updated source to 1.gif as requested -->
-                    <img src="1.gif" alt="Editing Showcase" class="w-full h-full object-cover min-h-[300px] bg-slate-800" onerror="this.src='https://via.placeholder.com/600x400/16161a/ffffff?text=1.gif+Not+Found'">
-                    <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-white">
-                        CLIP SHOWCASE: EDITING WORK
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold mb-2">Post-Production Mastery</h3>
+                <p class="text-slate-400 italic">Visual Breakdown: Pacing, Continuity & Technical Workflow</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Video Slot 1 (1.gif) -->
+                <div class="gif-container shadow-2xl aspect-video bg-slate-800 relative">
+                    <img src="1.gif" alt="Showcase Clip 1" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/600x400/16161a/ffffff?text=1.gif+Not+Found'">
+                    <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-white uppercase">
+                        Sequence A: Action Pacing
                     </div>
                 </div>
-                <div>
-                    <h3 class="text-3xl font-bold mb-4">Post-Production Mastery</h3>
-                    <p class="text-slate-400 mb-6 italic">Visual Breakdown: Pacing and Continuity</p>
-                    <p class="text-slate-300 leading-relaxed mb-6 text-justify">
-                        To demonstrate my editing skills, I have highlighted this sequence which showcases my ability to maintain continuity while controlling the rhythm of the scene. In the documentary project, I used precise cuts to match the audio peaks, ensuring the visual information felt natural and professional.
-                    </p>
+                <!-- Video Slot 2 (2.gif) -->
+                <div class="gif-container shadow-2xl aspect-video bg-slate-800 relative">
+                    <img src="2.gif" alt="Showcase Clip 2" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/600x400/16161a/ffffff?text=2.gif+Not+Found'">
+                    <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-white uppercase">
+                        Sequence B: Color & Continuity
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-3xl">
+                <p class="text-slate-300 leading-relaxed mb-6 text-justify">
+                    To demonstrate my editing skills, I have highlighted these sequences which showcase my ability to maintain continuity while controlling the rhythm of the scene. In these projects, I used precise cuts to match the audio peaks, ensuring the visual information felt natural and professional.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4">
                     <ul class="space-y-3">
                         <li class="flex items-center text-sm text-slate-400">
                             <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
@@ -131,7 +142,17 @@
                         </li>
                         <li class="flex items-center text-sm text-slate-400">
                             <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                            Multi-cam sequence management
+                        </li>
+                    </ul>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-sm text-slate-400">
+                            <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                             Color Correction & Visual Consistency
+                        </li>
+                        <li class="flex items-center text-sm text-slate-400">
+                            <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                            Advanced J-cuts and L-cuts
                         </li>
                     </ul>
                 </div>
@@ -150,7 +171,6 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Sample 1 -->
                 <div class="group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition">
-                    <img src="film-sample.gif" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition" alt="Film Project" onerror="this.style.display='none'">
                     <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
                         <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-1">Film / Editing</p>
                         <h3 class="text-lg font-bold">Documentary Final</h3>
@@ -236,30 +256,21 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
                 <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center">
                     <img src="backstage1.jpg" alt="Backstage" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
-                    <span>[ Backstage 1 ]</span>
+                    <span>[ Image 1 ]</span>
                 </div>
                 <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center">
                     <img src="backstage2.jpg" alt="Behind the Camera" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
-                    <span>[ On Camera ]</span>
+                    <span>[ Image 2 ]</span>
                 </div>
                 <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center">
                     <img src="edit-station.jpg" alt="Editing Station" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
-                    <span>[ Editing Station ]</span>
+                    <span>[ Image 3 ]</span>
                 </div>
             </div>
 
             <article class="prose prose-invert prose-slate max-w-none space-y-8 text-slate-300 leading-relaxed text-lg">
-                <p><strong>Reflecting on Workforce Preparation:</strong> Entering the CTE Film Production class at Burroughs High School, I initially viewed filmmaking as a purely artistic pursuit. However, this course quickly revealed that production is as much about project management and technical troubleshooting as it is about aesthetics. Working on tight deadlines for class assignments helped me develop a professional work ethic that is required in any high-stakes career field.</p>
-                
-                <p>The collaborative nature of film sets has been a major takeaway. In the workforce, you are rarely a "solo player." Film production forced me to communicate technical needs clearly with my crew members—from adjusting the Kelvin temperature on a light to discussing the pace of a scene. This ability to articulate complex ideas to a team is a skill I will carry into my future career in technology.</p>
-                
-                <p>Furthermore, the technical rigors of the class have mirrored the challenges I face in coding and 3D modeling. When a camera rig fails or audio has too much gain, you have to troubleshoot in real-time. This "failure-positive" mindset—learning to fix things on the fly—is exactly what prepares a student for the unpredictable nature of the modern workforce.</p>
-
-                <p>Beyond technical skills, CTE Film has emphasized the importance of professional "soft skills." Managing equipment worth thousands of dollars and respecting production schedules taught me accountability. These are the traits that employers look for regardless of the industry, and having a year of experience managing these responsibilities has significantly increased my confidence in my professional value.</p>
-
-                <p>As I move forward into my goals in computer science and data analysis, I realize that film production was the perfect "sandbox" for learning how to build complex systems. Whether it is a film edit or a codebase, the process of iteration—drafting, receiving feedback, and refining—is identical. This class didn't just teach me how to use a camera; it taught me how to be a professional creator in a digital world.</p>
-
-                <p>Ultimately, Burroughs CTE Film Production provided a bridge between classroom learning and real-world application. It allowed me to take ownership of my projects from concept to completion. I am leaving this class not just with a portfolio of films, but with a toolkit of management and production strategies that will serve as the foundation for my future career.</p>
+                <!-- Reflection text removed - Ready for your writing -->
+                <p class="italic text-slate-500 text-center">Your reflection essay content will go here.</p>
             </article>
         </div>
     </section>
