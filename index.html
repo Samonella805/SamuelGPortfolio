@@ -34,7 +34,14 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .work-card:hover .overlay { opacity: 1; }
+        .work-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .work-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            z-index: 10;
+        }
         
         .nav-link {
             position: relative;
@@ -58,12 +65,29 @@
             border-radius: 1rem;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gif-container:hover {
+            transform: translateY(-5px);
         }
 
         /* Physics-like falling animation container */
         #falling-profile {
-            transition: transform 0.1s ease-out;
+            transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
             will-change: transform;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Easter egg animation */
+        @keyframes boing {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2) rotate(10deg); }
+            100% { transform: scale(1); }
+        }
+        .boing-active {
+            animation: boing 0.5s ease;
         }
     </style>
 </head>
@@ -93,7 +117,7 @@
                     Samuel <br><span class="gradient-text">Grajeda</span>
                 </h1>
                 <p class="text-xl text-slate-400 leading-relaxed mb-8 max-w-lg">
-                    Editor and Cinematographer specializing in technical post-production workflows. Merging cinematic art with digital precision.
+                    Editor and Cinematographer specializing in technical post-production workflows. Merging cinematic art with digital precision (and a bit of chaos).
                 </p>
                 <div class="flex space-x-4">
                     <a href="#portfolio" class="bg-indigo-600 hover:bg-indigo-500 px-8 py-4 rounded-xl font-bold transition text-white">View Portfolio</a>
@@ -103,7 +127,7 @@
             <div class="flex justify-center md:justify-end">
                 <div class="relative group">
                     <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-                    <div id="falling-profile" class="relative w-64 h-64 md:w-80 md:h-80 bg-slate-900 rounded-full overflow-hidden border-4 border-slate-800 flex items-center justify-center text-slate-600 shadow-2xl">
+                    <div id="falling-profile" title="Click me for a surprise" class="relative w-64 h-64 md:w-80 md:h-80 bg-slate-900 rounded-full overflow-hidden border-4 border-slate-800 flex items-center justify-center text-slate-600 shadow-2xl">
                         <!-- Profile Image -->
                         <img src="profile.jpg" alt="Samuel Grajeda" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' class=\'h-32 w-32 opacity-20\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z\' /></svg>'">
                     </div>
@@ -177,7 +201,7 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Sample 1 -->
-                <div class="group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition">
+                <div class="work-card group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition cursor-help">
                     <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
                         <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-1">Film / Editing</p>
                         <h3 class="text-lg font-bold">Documentary Final</h3>
@@ -185,7 +209,7 @@
                     </div>
                 </div>
                 <!-- Sample 2 -->
-                <div class="group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition">
+                <div class="work-card group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition cursor-help">
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
                         <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-1">Cinematography</p>
                         <h3 class="text-lg font-bold">Class Film #2</h3>
@@ -193,7 +217,7 @@
                     </div>
                 </div>
                 <!-- Sample 3 -->
-                <div class="group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition">
+                <div class="work-card group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition cursor-help">
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
                         <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-1">Pre-Production</p>
                         <h3 class="text-lg font-bold">Storyboard Sketches</h3>
@@ -201,7 +225,7 @@
                     </div>
                 </div>
                 <!-- Sample 4 -->
-                <div class="group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition">
+                <div class="work-card group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition cursor-help">
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
                         <p class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-1">3D Production Design</p>
                         <h3 class="text-lg font-bold">WHITENOISE Render</h3>
@@ -209,7 +233,7 @@
                     </div>
                 </div>
                 <!-- Sample 5 -->
-                <div class="group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition">
+                <div class="work-card group relative bg-slate-900 rounded-2xl overflow-hidden border border-white/5 aspect-video hover:border-indigo-500/50 transition cursor-help">
                     <div class="absolute inset-0 p-6 flex flex-col justify-end">
                         <p class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-1">Scripting</p>
                         <h3 class="text-lg font-bold">Screenplay Sample</h3>
@@ -228,7 +252,7 @@
                     <h2 class="text-5xl font-extrabold mb-2">Resume</h2>
                     <p class="text-indigo-400 font-mono tracking-widest text-sm">CTE FILM PRODUCTION II STUDENT</p>
                 </div>
-                <button onclick="window.print()" class="mt-6 md:mt-0 px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-slate-200 transition">
+                <button onclick="window.print()" class="mt-6 md:mt-0 px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-slate-200 transition shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
                     Download PDF
                 </button>
             </div>
@@ -258,26 +282,25 @@
     <!-- Photo Essay Reflection -->
     <section id="essay" class="py-32 px-6 bg-white/[0.02]">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center">Photo Essay: Workforce Preparation</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center text-indigo-400">Photo Essay: Workforce Preparation</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center">
+                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center hover:scale-110 transition duration-500 cursor-zoom-in">
                     <img src="backstage1.jpg" alt="Backstage" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
                     <span>[ Image 1 ]</span>
                 </div>
-                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center">
+                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center hover:scale-110 transition duration-500 cursor-zoom-in">
                     <img src="backstage2.jpg" alt="Behind the Camera" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
                     <span>[ Image 2 ]</span>
                 </div>
-                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center">
+                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center hover:scale-110 transition duration-500 cursor-zoom-in">
                     <img src="edit-station.jpg" alt="Editing Station" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
                     <span>[ Image 3 ]</span>
                 </div>
             </div>
 
             <article class="prose prose-invert prose-slate max-w-none space-y-8 text-slate-300 leading-relaxed text-lg">
-                <!-- Reflection text removed - Ready for your writing -->
-                <p class="italic text-slate-500 text-center">Your reflection essay content will go here.</p>
+                <p class="italic text-slate-500 text-center border-2 border-dashed border-white/10 p-12 rounded-3xl">Your reflection essay content will go here. (Write something that makes you sound smarter than you actually are, that's the secret!)</p>
             </article>
         </div>
     </section>
@@ -288,26 +311,38 @@
     </footer>
 
     <script>
-        // Physics-style falling profile picture logic
         const profile = document.getElementById('falling-profile');
         
+        // Physics-style falling profile picture logic
         window.addEventListener('scroll', () => {
             const scrollPos = window.scrollY;
-            const threshold = 100; // Delay the "fall" slightly
+            const threshold = 100;
             
             if (scrollPos > threshold) {
-                // Image follows the scroll but "falls" down the screen
-                // Multiply by a factor to make it fall faster than the text scrolls
-                const translateY = (scrollPos - threshold) * 1.5; 
-                const rotation = (scrollPos - threshold) * 0.05; // Add a slight tilt
+                const diff = scrollPos - threshold;
+                const translateY = diff * 1.5; 
                 
-                profile.style.transform = `translateY(${translateY}px) rotate(${rotation}deg)`;
-                profile.style.opacity = Math.max(1 - (scrollPos / 2000), 0.2); // Fade slightly as it falls
+                // Add a "wobble" effect based on sine wave of scroll position
+                const wobble = Math.sin(scrollPos * 0.01) * 15;
+                const rotation = (diff * 0.05) + (Math.cos(scrollPos * 0.01) * 10); 
+                
+                profile.style.transform = `translate(${wobble}px, ${translateY}px) rotate(${rotation}deg)`;
+                profile.style.opacity = Math.max(1 - (scrollPos / 2500), 0.3);
             } else {
-                // Back to home position
-                profile.style.transform = 'translateY(0) rotate(0deg)';
+                profile.style.transform = 'translate(0, 0) rotate(0deg)';
                 profile.style.opacity = '1';
             }
+        });
+
+        // Silly click interaction
+        profile.addEventListener('click', () => {
+            profile.classList.add('boing-active');
+            setTimeout(() => profile.classList.remove('boing-active'), 500);
+            
+            // Randomly change the glow color on click
+            const colors = ['#6366f1', '#a855f7', '#ec4899', '#22c55e', '#eab308'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            profile.parentElement.querySelector('div').style.background = `linear-gradient(135deg, ${randomColor}, transparent)`;
         });
     </script>
 </body>
