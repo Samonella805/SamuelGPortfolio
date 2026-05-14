@@ -11,7 +11,7 @@
         :root {
             --bg: #0a0a0c;
             --card: #16161a;
-            --accent: #a855f7; /* Static Purple */
+            --accent: #6366f1;
         }
 
         body { 
@@ -19,8 +19,8 @@
             background-color: var(--bg); 
             color: #e2e8f0;
             scroll-behavior: smooth;
-            /* Critical fix: Prevent transformed elements from expanding page height */
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .glass { 
@@ -29,20 +29,16 @@
             border: 1px solid rgba(255, 255, 255, 0.05); 
         }
 
-        .purple-text {
+        .static-purple {
             color: #a855f7;
         }
 
         .work-card {
-            background: var(--card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            min-height: 200px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         .work-card:hover {
             transform: scale(1.05) rotate(1deg);
-            border-color: var(--accent);
             z-index: 10;
         }
         
@@ -79,6 +75,7 @@
             will-change: transform;
             cursor: pointer;
             user-select: none;
+            pointer-events: auto;
         }
 
         @keyframes boing {
@@ -92,10 +89,9 @@
     </style>
 </head>
 <body class="antialiased">
-
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 px-6 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <span class="text-lg font-extrabold tracking-tighter uppercase">SG <span class="text-purple-500">/</span> PROD</span>
+            <span class="text-lg font-extrabold tracking-tighter uppercase">SG <span class="text-indigo-500">/</span> PROD</span>
             <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-400">
                 <a href="#home" class="nav-link hover:text-white">Home</a>
                 <a href="#portfolio" class="nav-link hover:text-white">Portfolio</a>
@@ -108,24 +104,24 @@
     <section id="home" class="relative min-h-screen flex items-center pt-20 px-6">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <div class="inline-block px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-bold mb-6 uppercase tracking-widest">
+                <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold mb-6 uppercase tracking-widest">
                     Burroughs CTE Film Production
                 </div>
                 <h1 class="text-6xl md:text-8xl font-extrabold mb-6 tracking-tighter">
-                    Samuel <br><span class="purple-text">Grajeda</span>
+                    Samuel <br><span class="static-purple">Grajeda</span>
                 </h1>
                 <p class="text-xl text-slate-400 leading-relaxed mb-8 max-w-lg">
                     Student creator focused on video editing, digital media, 3D design, and creative technical projects.
                 </p>
                 <div class="flex space-x-4">
-                    <a href="#portfolio" class="bg-purple-600 hover:bg-purple-500 px-8 py-4 rounded-xl font-bold transition text-white shadow-lg shadow-purple-500/20">View Portfolio</a>
+                    <a href="#portfolio" class="bg-indigo-600 hover:bg-indigo-500 px-8 py-4 rounded-xl font-bold transition text-white shadow-lg">View Portfolio</a>
                     <a href="#resume" class="border border-white/10 hover:bg-white/5 px-8 py-4 rounded-xl font-bold transition">Read Resume</a>
                 </div>
             </div>
             <div class="flex justify-center md:justify-end">
                 <div class="relative group">
-                    <div class="absolute -inset-1.5 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-                    <div id="falling-profile" title="Click me for a surprise" class="relative w-64 h-64 md:w-80 md:h-80 bg-slate-900 rounded-full overflow-hidden border-4 border-slate-800 flex items-center justify-center text-slate-600 shadow-2xl">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+                    <div id="falling-profile" title="Click me!" class="relative w-64 h-64 md:w-80 md:h-80 bg-slate-900 rounded-full overflow-hidden border-4 border-slate-800 flex items-center justify-center text-slate-600 shadow-2xl">
                         <img src="profile.jpg" alt="Samuel Grajeda" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' class=\'h-32 w-32 opacity-20\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'currentColor\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'1.5\' d=\'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z\' /></svg>'">
                     </div>
                 </div>
@@ -140,11 +136,11 @@
                 <p class="text-slate-500">A collection of cinematic experiments and digital projects.</p>
             </div>
             
-            <!-- Featured: Post-Production Mastery -->
-            <div class="mb-24 p-8 rounded-[2rem] bg-purple-600/5 border border-purple-500/10">
+            <!-- Post-Production Section -->
+            <div class="mb-24 p-8 rounded-[2rem] bg-indigo-600/5 border border-indigo-500/10">
                 <div class="mb-12">
-                    <div class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-[10px] font-bold mb-4 uppercase tracking-widest">Featured Work</div>
-                    <h3 class="text-3xl font-bold mb-2">Post-Production Mastery</h3>
+                    <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-400 text-[10px] font-bold mb-4 uppercase tracking-widest">Featured Work</div>
+                    <h3 class="text-3xl font-bold mb-2">Post-Production</h3>
                     <p class="text-slate-400 italic text-sm">Visual Breakdown: Stylized Reenactments & Creative Problem Solving</p>
                 </div>
 
@@ -159,28 +155,28 @@
                     </div>
                 </div>
 
-                <div class="max-w-3xl">
-                <p class="text-slate-300 leading-relaxed mb-6 text-justify">
-                    These sequences were created for a documentary project as stylized reenactments based on real stories from classmates. Using still photography, keyframe animation, and editing techniques, I built short stop-motion-inspired scenes that added humor and personality while solving production limitations creatively. Originally, we were going to do live-action reenactments, but because of setbacks, we had to cancel them. In place, I made these in place with a short amount of time we had left, I made these in place. I know they are silly, but I am rather proud of them.
-                </p>
-                <div class="grid sm:grid-cols-2 gap-4">
+                <div class="max-w-3xl text-slate-300 leading-relaxed text-justify mb-6">
+                    <p>
+                        These sequences were created for a documentary project as stylized reenactments based on real stories from classmates. Using still photography, keyframe animation, and editing techniques, I built short stop-motion-inspired scenes that added humor and personality while solving production limitations creatively. Originally, we were going to do live-action reenactments, but because of setbacks, we had to cancel them. In place, I made these in place with a short amount of time we had left, I made these in place. I know they are silly, but I am rather proud of them.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 mt-6">
                         <ul class="space-y-3">
                             <li class="flex items-center text-sm text-slate-400">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                                 Photo-based stop motion animation
                             </li>
                             <li class="flex items-center text-sm text-slate-400">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                                 Keyframed movement and timing
                             </li>
                         </ul>
                         <ul class="space-y-3">
                             <li class="flex items-center text-sm text-slate-400">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                                 Experimental documentary reenactments
                             </li>
                             <li class="flex items-center text-sm text-slate-400">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                                 Comedic visual storytelling
                             </li>
                         </ul>
@@ -188,24 +184,60 @@
                 </div>
             </div>
 
-            <div class="mb-12">
-                <h3 class="text-xl font-bold mb-6 flex items-center">
-                    <span class="w-8 h-[1px] bg-slate-800 mr-4"></span>
-                    Work Samples
-                </h3>
+            <!-- Cinematography Section -->
+            <div class="mb-24 p-8 rounded-[2rem] bg-indigo-600/5 border border-indigo-500/10">
+                <div class="mb-12">
+                    <div class="inline-block px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-400 text-[10px] font-bold mb-4 uppercase tracking-widest">Visual Composition</div>
+                    <h3 class="text-3xl font-bold mb-2">Cinematography</h3>
+                    <p class="text-slate-400 italic text-sm">Assisted with framing, lighting, and scene coverage during production exercises</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="gif-container shadow-2xl aspect-video bg-slate-800 relative">
+                        <img src="1.png" alt="Cine Sample 1" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/600x400/16161a/ffffff?text=1.png+Not+Found'">
+                    </div>
+                    <div class="gif-container shadow-2xl aspect-video bg-slate-800 relative">
+                        <img src="2.png" alt="Cine Sample 2" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/600x400/16161a/ffffff?text=2.png+Not+Found'">
+                    </div>
+                </div>
+
+                <div class="max-w-3xl">
+                    <div class="prose prose-invert prose-slate max-w-none text-slate-300 leading-relaxed mb-6 text-justify">
+                        <p>
+                            Although being a cameraman was not my main role in the films, I still did my fair share of camera work, being the main cameraman for 2 films and assisting in others. Before this class, I had no idea how to operate a camera, but I can say I can use one now to at least a basic level standard, as well as having an understanding of how composition and lighting work, and how they can affect scenes.
+                        </p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-sm text-slate-400">
+                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                                Practical cinematography experience
+                            </li>
+                            <li class="flex items-center text-sm text-slate-400">
+                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                                Basic lighting and scene composition
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-sm text-slate-400">
+                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                                Shot framing and camera setup
+                            </li>
+                            <li class="flex items-center text-sm text-slate-400">
+                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                                Camera operation & handling
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Blank Sample 1 -->
-                <div class="work-card group relative rounded-2xl overflow-hidden aspect-video transition cursor-help"></div>
-                <!-- Blank Sample 2 -->
-                <div class="work-card group relative rounded-2xl overflow-hidden aspect-video transition cursor-help"></div>
-                <!-- Blank Sample 3 -->
-                <div class="work-card group relative rounded-2xl overflow-hidden aspect-video transition cursor-help"></div>
-                <!-- Blank Sample 4 -->
-                <div class="work-card group relative rounded-2xl overflow-hidden aspect-video transition cursor-help"></div>
-                <!-- Blank Sample 5 -->
-                <div class="work-card group relative rounded-2xl overflow-hidden aspect-video transition cursor-help"></div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+                <div class="work-card bg-slate-900/50 border border-white/5 aspect-video rounded-2xl"></div>
+                <div class="work-card bg-slate-900/50 border border-white/5 aspect-video rounded-2xl"></div>
+                <div class="work-card bg-slate-900/50 border border-white/5 aspect-video rounded-2xl"></div>
+                <div class="work-card bg-slate-900/50 border border-white/5 aspect-video rounded-2xl"></div>
+                <div class="work-card bg-slate-900/50 border border-white/5 aspect-video rounded-2xl"></div>
             </div>
         </div>
     </section>
@@ -215,8 +247,9 @@
             <div class="flex flex-col md:flex-row justify-between items-start mb-12">
                 <div>
                     <h2 class="text-5xl font-extrabold mb-2">Resume</h2>
+                    <p class="text-indigo-400 font-mono tracking-widest text-xs uppercase font-bold">STUDENT CREATOR</p>
                 </div>
-                <button onclick="window.print()" class="mt-6 md:mt-0 px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-slate-200 transition shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+                <button onclick="window.print()" class="mt-6 md:mt-0 px-6 py-3 bg-white text-black font-bold rounded-xl hover:bg-slate-200 transition">
                     Download PDF
                 </button>
             </div>
@@ -225,7 +258,7 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="col-span-1 text-slate-500 uppercase text-xs font-bold tracking-widest">Education</div>
                     <div class="col-span-2">
-                        <h4 class="font-bold text-lg">Burroughs High School</h4>
+                        <h4 class="font-bold text-lg text-white">Burroughs High School</h4>
                         <p class="text-slate-400">(Expected 2027)</p>
                     </div>
                 </div>
@@ -233,7 +266,7 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="col-span-1 text-slate-500 uppercase text-xs font-bold tracking-widest">Technical Skills</div>
                     <div class="col-span-2 flex flex-wrap gap-2">
-                        <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-sm font-bold text-purple-300">Video Editing (DaVinci Resolve / Canva)</span>
+                        <span class="bg-indigo-600/10 border border-indigo-500/20 px-3 py-1 rounded-md text-sm text-indigo-300">Video Editing (DaVinci Resolve / Canva)</span>
                         <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-sm">Cinematography & Camera Operation</span>
                         <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-sm">3D Modeling (Blender)</span>
                         <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-md text-sm">Basic Programming & Scripting</span>
@@ -245,28 +278,31 @@
         </div>
     </section>
 
+    <!-- Photo Essay Reflection -->
     <section id="essay" class="py-32 px-6 bg-white/[0.02]">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12 text-center text-purple-400">Photo Essay: Workforce Preparation</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center text-indigo-400">Photo Essay: Reflection</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center hover:scale-110 transition duration-500 cursor-zoom-in">
+                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center overflow-hidden">
                     <img src="backstage1.jpg" alt="Backstage" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
                     <span>[ Image 1 ]</span>
                 </div>
-                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center hover:scale-110 transition duration-500 cursor-zoom-in">
+                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center overflow-hidden">
                     <img src="backstage2.jpg" alt="Behind the Camera" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
                     <span>[ Image 2 ]</span>
                 </div>
-                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center hover:scale-110 transition duration-500 cursor-zoom-in">
+                <div class="aspect-square bg-slate-900 rounded-2xl border border-white/5 flex items-center justify-center text-xs text-slate-600 p-4 text-center overflow-hidden">
                     <img src="edit-station.jpg" alt="Editing Station" class="w-full h-full object-cover rounded-2xl" onerror="this.style.display='none'">
                     <span>[ Image 3 ]</span>
                 </div>
             </div>
 
-            <article class="prose prose-invert prose-slate max-w-none space-y-8 text-slate-300 leading-relaxed text-lg min-h-[300px] border-2 border-dashed border-white/10 rounded-3xl p-12 flex items-center justify-center">
-                <!-- User to write content here -->
-                <p class="italic text-slate-500 text-center uppercase tracking-widest text-sm">Writing area cleared for your reflection</p>
+            <article class="prose prose-invert prose-slate max-w-none space-y-8 text-slate-300 leading-relaxed text-lg text-justify">
+                <p class="text-slate-500 text-center border-2 border-dashed border-white/10 p-12 rounded-3xl min-h-[200px]">
+                    <!-- Blank for content -->
+                </p>
+                <div class="h-12"></div>
             </article>
         </div>
     </section>
@@ -278,29 +314,27 @@
 
     <script>
         const profile = document.getElementById('falling-profile');
-        
+        const body = document.body;
+        const html = document.documentElement;
+
         window.addEventListener('scroll', () => {
             const scrollPos = window.scrollY;
             const threshold = 100;
             
-            // Calculate max page height to prevent infinite scroll
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            
             if (scrollPos > threshold) {
                 const diff = scrollPos - threshold;
-                // High fall speed multiplier
+                // High speed fall
                 let translateY = diff * 5.0; 
                 
-                // CRITICAL FIX: Clamp translateY so it cannot exceed a reasonable limit.
-                // This prevents the image from pushing the document height indefinitely.
-                const maxFall = 3000; // Cap the drop at 3000px
-                translateY = Math.min(translateY, maxFall);
-                
+                // Clamp so it doesn't push the page down infinitely
+                const cap = 2000; 
+                if (translateY > cap) translateY = cap;
+
                 const wobble = Math.sin(scrollPos * 0.01) * 20;
                 const rotation = (diff * 0.1) + (Math.cos(scrollPos * 0.01) * 15); 
                 
                 profile.style.transform = `translate(${wobble}px, ${translateY}px) rotate(${rotation}deg)`;
-                profile.style.opacity = Math.max(1 - (scrollPos / 2000), 0.2);
+                profile.style.opacity = Math.max(1 - (scrollPos / 2500), 0.2);
             } else {
                 profile.style.transform = 'translate(0, 0) rotate(0deg)';
                 profile.style.opacity = '1';
@@ -311,7 +345,7 @@
             profile.classList.add('boing-active');
             setTimeout(() => profile.classList.remove('boing-active'), 500);
             
-            const colors = ['#a855f7', '#818cf8', '#ec4899', '#22c55e', '#eab308'];
+            const colors = ['#6366f1', '#a855f7', '#ec4899', '#22c55e', '#eab308'];
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             profile.parentElement.querySelector('div').style.background = `linear-gradient(135deg, ${randomColor}, transparent)`;
         });
